@@ -1,8 +1,13 @@
-#!/usr/bin/env python3 
+#!/usr/bin/env python3
 # coding:utf-8
 import requests
 import os
 from configparser import ConfigParser
+
+####
+# Main file
+
+
 
 def read_config(section):
     """ Read database configuration file and return a dictionary object
@@ -15,7 +20,7 @@ def read_config(section):
     filename = dir + '/config.ini'
     parser = ConfigParser()
     parser.read(filename)
- 
+
     # get section, default to mysql
     db = {}
     if parser.has_section(section):
@@ -24,9 +29,9 @@ def read_config(section):
             db[item[0]] = item[1]
     else:
         raise Exception('{0} not found in the {1} file'.format(section, filename))
- 
+
     return db
-    
+
 def is_alive(site):
     '''function to ckeck if the site is alive'''
     r = requests.get(site , verify=False)
@@ -34,4 +39,3 @@ def is_alive(site):
         print("Welcome to " + site)
     else:
         raise Exception('Error {0}: {1}'.format(r.status_code,r.exception.RequestException))
-        
