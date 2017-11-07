@@ -1,0 +1,14 @@
+V1.0
+
+1-Create structure for Cmd based app
+  a-Maintain list of commands
+
+2-Handle connection to site
+  a-Put Id and Pwd (hidden mode)
+  b-Handle errors
+  c-Handle cookies
+
+3-Bookmark manager
+  a-Get bookmark html page
+  b-Parse to get the tab where info are stored
+  b-Display nicely
